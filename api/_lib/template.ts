@@ -93,7 +93,7 @@ function getCss(theme: string, fontSize: string) {
       margin-right: 0.2em;
     }
     .logo {
-      width: 200px;
+      width: 500px;
       margin: 0 50px;
     }
 
