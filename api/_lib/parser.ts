@@ -31,7 +31,7 @@ export function parseRequest(req: IncomingMessage) {
     text: decodeURIComponent(text),
     theme: theme === 'dark' ? 'dark' : 'light',
     md: md === '1' || md === 'true',
-    fontSize: fontSize || '250px',
+    fontSize: fontSize || '150px',
     brand: String(brand),
     caption: decodeURIComponent(caption as string),
     images: getArray(images)

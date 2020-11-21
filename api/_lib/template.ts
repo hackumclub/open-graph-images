@@ -6,12 +6,10 @@ const twOptions = { folder: 'svg', ext: '.svg' }
 const emojify = (text: string) => twemoji.parse(text, twOptions)
 
 function getCss(theme: string, fontSize: string) {
-  let background = '#ffffff'
-  let radial = '#dde1e4'
+  let background = '#ebebeb'
 
   if (theme === 'dark') {
     background = '#17171d'
-    radial = '#273444'
   }
 
   return `
@@ -19,15 +17,12 @@ function getCss(theme: string, fontSize: string) {
 
     body {
       background: ${background};
-      background-image: radial-gradient(circle at 25px 25px, ${radial} 3%, transparent 0%),
-        radial-gradient(circle at 75px 75px, ${radial} 3%, transparent 0%);
-      background-size: 100px 100px;
       height: 100vh;
       display: flex;
       text-align: center;
       align-items: center;
       justify-content: center;
-      font-family: 'Nunito', sans-serif;
+      font-family: 'Nunito', sans-serif !important;
       font-size: ${sanitizeHtml(fontSize)};
       font-style: normal;
     }
@@ -103,14 +98,11 @@ function getCss(theme: string, fontSize: string) {
     }
 
     .heading {
-      background-image: linear-gradient(to bottom right, #ff8c37, #ec3750 66%);
-      background-repeat: no-repeat;
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
+      color: #FD6563;
       margin: 0 50px;
       padding-bottom: 25px;
       line-height: 0.875;
-      font-weight: bold;
+      font-weight: 900;
     }
 
     .heading * {
@@ -119,7 +111,6 @@ function getCss(theme: string, fontSize: string) {
 
     .caption {
       font-size: ${Number(sanitizeHtml(fontSize).match(/\d+/)) * 0.375}px;
-      text-transform: uppercase;
       color: #7a8c97;
       letter-spacing: 0;
     }

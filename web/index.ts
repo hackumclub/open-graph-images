@@ -170,8 +170,8 @@ const App = (_: any, state: AppState, setState: SetState) => {
   }
   const {
     fileType = 'png',
-    fontSize = '250px',
-    theme = 'light',
+    fontSize = '150px',
+    theme = 'dark',
     md = true,
     text = 'Hackum.club',
     caption = 'By ulziibox',
