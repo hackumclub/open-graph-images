@@ -1,5 +1,5 @@
 {
-  "name": "Hackum Open Graph Images",
+  "name": "@hackumclub/open-graph-images",
   "version": "1.0.0",
   "private": true,
   "description": "Generate Open Graph images for Hackum club",
