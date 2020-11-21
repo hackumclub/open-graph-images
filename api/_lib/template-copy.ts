@@ -15,7 +15,18 @@ function getCss(theme: string, fontSize: string) {
   }
 
   return `
-  @import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap");
+    @font-face {
+      font-family: 'Phantom Sans';
+      src: url('https://assets.hackclub.com/fonts/Phantom_Sans_0.7/Regular.woff') format('woff');
+      font-weight: normal;
+      font-style: normal;
+    }
+    @font-face {
+      font-family: 'Phantom Sans';
+      src: url('https://assets.hackclub.com/fonts/Phantom_Sans_0.7/Bold.woff') format('woff');
+      font-weight: bold;
+      font-style: normal;
+    }
 
     body {
       background: ${background};
@@ -27,7 +38,7 @@ function getCss(theme: string, fontSize: string) {
       text-align: center;
       align-items: center;
       justify-content: center;
-      font-family: 'Nunito', sans-serif;
+      font-family: 'Phantom Sans', sans-serif;
       font-size: ${sanitizeHtml(fontSize)};
       font-style: normal;
     }
@@ -66,7 +77,7 @@ function getCss(theme: string, fontSize: string) {
 
     .plus {
       color: #7a8c97;
-      font-size: 60px;
+      font-size: 75px;
       padding: 0 30px;
     }
 
@@ -98,7 +109,7 @@ function getCss(theme: string, fontSize: string) {
       margin-right: 0.2em;
     }
     .logo {
-      width: 200px;
+      width: 125px;
       margin: 0 50px;
     }
 
@@ -133,7 +144,7 @@ function getCss(theme: string, fontSize: string) {
 }
 
 export function getHtml(parsedReq: ParsedRequest) {
-  const { text, theme, md, fontSize, images, caption } = parsedReq
+  const { text, theme, md, fontSize, brand, images, caption } = parsedReq
   return `<!DOCTYPE html>
   <html>
   <meta charset="utf-8">
@@ -145,6 +156,11 @@ export function getHtml(parsedReq: ParsedRequest) {
   <body>
     <div class="brand">
       <img class="logo" src="https://1.bp.blogspot.com/-X9coUQmFEA4/X7kCcLE7rrI/AAAAAAAAEPc/mrIKtDiTXQ4vOQ_DdTtXg8cVeLAT9fv-gCLcBGAsYHQ/s320/hackum-logo.png">
+      ${
+        brand.length > 0 && brand !== 'undefined'
+          ? `<span>Hack Club</span> ${brand || 'Workshops'}`
+          : `Hack Club`
+      }
     </div>
     <div class="container">
       ${
